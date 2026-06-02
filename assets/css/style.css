@@ -1,0 +1,409 @@
+/* ============================================================
+   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ============================================================ */
+:root {
+  --primary: #1ee06d;           /* Verde Neon */
+  --bg-gradient: linear-gradient(to bottom, #050505, #0a110d, #050505);
+  --card-bg: #161616;           /* Fundo dos Cards */
+  --white: #ffffff;
+  --text-gray: #a9a9a9;         /* Texto Secundário */
+  --transition: 0.4s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--white);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   2. CABEÇALHO E NAVEGAÇÃO
+   ============================================================ */
+.header-container {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background: rgba(5, 5, 5, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(30, 224, 109, 0.1);
+}
+
+.navegacao {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.menu-link:hover {
+  color: var(--primary);
+}
+
+/* ============================================================
+   3. SECÇÃO HERO (INÍCIO)
+   ============================================================ */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap-reverse;
+}
+
+.greeting {
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.name {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin: 10px 0;
+  background: linear-gradient(90deg, #fff, var(--primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.profession {
+  font-size: 1.5rem;
+  color: var(--text-gray);
+  font-weight: 400;
+}
+
+.hero-description {
+  margin-top: 25px;
+  max-width: 500px;
+  border-left: 2px solid var(--primary);
+  padding-left: 20px;
+}
+
+.hero-description p {
+  font-size: 1rem;
+  color: var(--text-gray);
+  margin-bottom: 8px;
+}
+
+/* Foto com Brilho */
+.profile-glow {
+  position: relative;
+  width: 280px;
+  height: 280px;
+}
+
+.profile-glow::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgba(30, 224, 109, 0.2);
+  animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+.foto-perfil {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary);
+  position: relative;
+}
+
+/* ============================================================
+   4. ESTILOS DE SECÇÃO (COMUM)
+   ============================================================ */
+.section-container {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: var(--primary);
+  margin: 10px auto;
+}
+
+/* ============================================================
+   5. SKILLS (HABILIDADES)
+   ============================================================ */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.skill-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: var(--transition);
+}
+
+.skill-card:hover {
+  border-color: var(--primary);
+}
+
+.skill-name {
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.progress-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.skill-list {
+  list-style: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+
+.skill-card.active .skill-list {
+  max-height: 300px;
+  margin-top: 15px;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+}
+
+.skill-list li {
+  padding: 5px 0;
+  color: var(--text-gray);
+  font-size: 0.9rem;
+}
+
+.view-more-btn {
+  color: var(--primary);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+/* ============================================================
+   6. PROJETOS
+   ============================================================ */
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.projeto-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: var(--transition);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.projeto-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+}
+
+.card-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.tags span {
+  background: #222;
+  color: var(--primary);
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  margin-right: 8px;
+}
+
+/* Container do botão (para garantir a centralização) */
+.projects--content__more {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.projects--content__more a {
+  display: inline-block;
+  width: fit-content;
+  background: var(--primary); /* O verde neon */
+  color: #000;                /* Texto preto para contraste no fundo verde */
+  margin-top: 50px;
+  margin-bottom: 30px;
+  border-radius: 8px;         /* Bordas um pouco mais arredondadas como o do contato */
+  padding: 15px 40px;         /* Mais robusto */
+  font-weight: 700;           /* Negrito */
+  text-decoration: none;
+  text-transform: uppercase;  /* Letras maiúsculas */
+  font-size: 0.9rem;
+  transition: 0.3s ease;      /* Transição suave */
+  cursor: pointer;
+}
+
+/* O Efeito HOVER igual ao do Enviar Contato */
+.projects--content__more a:hover {
+  background: #fff;           /* Muda para branco ao passar o mouse */
+  color: #000;
+  box-shadow: 0 0 20px var(--primary); /* Aquele brilho neon em volta */
+  transform: translateY(-3px);         /* Leve subida para dar profundidade */
+}
+/* ============================================================
+   7. CONTATO
+   ============================================================ */
+.contato-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.formulario-contato {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.campo-form {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+}
+
+.campo-form:focus {
+  border-color: var(--primary);
+}
+
+.btn-enviar {
+  width: 100%;
+  padding: 15px;
+  background: var(--primary);
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-enviar:hover {
+  background: #fff;
+  box-shadow: 0 0 20px var(--primary);
+}
+
+/* ============================================================
+   8. ANIMAÇÕES (DATA-ANIME)
+   ============================================================ */
+[data-anime] {
+  opacity: 0;
+  transition: 1s ease;
+}
+
+[data-anime="up"] { transform: translateY(40px); }
+[data-anime="left"] { transform: translateX(-40px); }
+
+[data-anime].animate {
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* ============================================================
+   9. RESPONSIVIDADE (MOBILE)
+   ============================================================ */
+@media (max-width: 768px) {
+  .name { font-size: 3rem; }
+  .hero-content { text-align: center; justify-content: center; gap: 40px; }
+  .hero-description { border-left: none; border-top: 2px solid var(--primary); padding: 15px 0 0 0; margin: 20px auto; }
+  .menu { display: none; } /* Pode ser trocado por um menu mobile futuramente */
+}

@@ -1,0 +1,161 @@
+/* ============================================================
+   PROJETOS.CSS - CATÁLOGO COMPLETO (DESIGN UNIFICADO)
+   ============================================================ */
+
+/* Reutilizando as cores e configurações do style.css principal */
+:root {
+  --primary: #1ee06d;           /* Verde Neon */
+  --bg-gradient: linear-gradient(to bottom, #050505, #0a110d, #050505);
+  --card-bg: #161616;           /* Fundo dos Cards */
+  --white: #ffffff;
+  --text-gray: #a9a9a9;         /* Texto Secundário */
+  --transition: 0.4s ease-in-out;
+}
+
+body {
+  background: var(--bg-gradient) !important;
+  color: var(--white);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Espaçamento para o conteúdo não ficar sob o Header fixo */
+.section-container {
+  padding: 120px 20px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Título da Seção */
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: var(--primary);
+  margin: 10px auto;
+}
+
+/* Grid de Projetos - Igual ao Index */
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* Estilo do Card */
+.projeto-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: var(--transition);
+  border: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.projeto-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+  box-shadow: 0 0 30px rgba(30, 224, 109, 0.15);
+}
+
+/* Imagens dos Projetos */
+.card-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.projeto-card:hover .card-img img {
+  transform: scale(1.05);
+}
+
+/* Corpo do Card */
+.card-body {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body h3 {
+  color: var(--primary);
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}
+
+.card-body p {
+  color: var(--text-gray);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Tags de Tecnologia */
+.tags {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.tags span {
+  background: #222;
+  color: var(--primary);
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  margin-right: 8px;
+  font-weight: 600;
+  border: 1px solid rgba(30, 224, 109, 0.1);
+}
+
+/* Botão Estilizado (Igual ao 'Enviar' do Index) */
+.btn-enviar {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn-enviar:hover {
+  background: #fff;
+  box-shadow: 0 0 20px var(--primary);
+  color: #000;
+}
+
+/* Animações ao Scroll */
+[data-anime] {
+  opacity: 0;
+  transition: 1s ease;
+}
+
+[data-anime="up"] { transform: translateY(40px); }
+
+[data-anime].animate {
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .section-title { font-size: 2rem; }
+  .section-container { padding-top: 100px; }
+}
