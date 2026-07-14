@@ -339,47 +339,58 @@ body {
    7. CONTATO
    ============================================================ */
 .contato-wrapper {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
-.formulario-contato {
+.contato-card {
   background: var(--card-bg);
-  padding: 30px;
+  padding: 40px 30px;
   border-radius: 15px;
   border: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
 }
 
-.campo-form {
-  width: 100%;
-  padding: 15px;
-  margin-bottom: 20px;
-  background: #111;
-  border: 1px solid #333;
-  border-radius: 8px;
-  color: #fff;
-  outline: none;
-  transition: 0.3s;
-}
-
-.campo-form:focus {
-  border-color: var(--primary);
-}
-
-.btn-enviar {
-  width: 100%;
-  padding: 15px;
-  background: var(--primary);
-  border: none;
-  border-radius: 8px;
-  font-weight: 700;
-  cursor: pointer;
+.contato-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 110px;
+  padding: 20px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+  text-decoration: none;
+  color: var(--text-gray);
+  font-size: 0.85rem;
   transition: var(--transition);
 }
 
-.btn-enviar:hover {
-  background: #fff;
-  box-shadow: 0 0 20px var(--primary);
+.contato-btn img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.contato-btn i {
+  font-size: 32px;
+  color: var(--text-gray);
+  transition: var(--transition);
+}
+
+.contato-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(30, 224, 109, 0.2);
+}
+
+.contato-btn:hover i {
+  color: var(--primary);
 }
 
 /* ============================================================
