@@ -335,6 +335,58 @@ body {
   box-shadow: 0 0 20px var(--primary); /* Aquele brilho neon em volta */
   transform: translateY(-3px);         /* Leve subida para dar profundidade */
 }
+
+/* ============================================================
+   6.1 CERTIFICADOS
+   ============================================================ */
+.certificados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.certificado-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: var(--transition);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.certificado-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+}
+
+.certificado-card .card-body {
+  padding: 20px;
+}
+
+.certificado-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.certificado-instituicao {
+  color: var(--text-gray);
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+}
+
+.ver-certificado {
+  display: inline-block;
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.ver-certificado:hover {
+  border-bottom-color: var(--primary);
+}
+
 /* ============================================================
    7. CONTATO
    ============================================================ */
