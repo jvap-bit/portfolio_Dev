@@ -446,7 +446,54 @@ body {
 }
 
 /* ============================================================
-   8. ANIMAÇÕES (DATA-ANIME)
+   8. BOTÃO DE BAIXAR O CURRICULO
+   ============================================================ */
+.btn-curriculo{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-top:35px;
+    padding:16px 38px;
+    background:var(--primary);
+    color:#000;
+    text-decoration:none;
+    font-weight:700;
+    border-radius:10px;
+    transition:.3s;
+    box-shadow:0 0 20px rgba(30,224,109,.25);
+}
+
+.btn-curriculo:hover{
+    background:#fff;
+    color:#000;
+    transform:translateY(-4px);
+    box-shadow:0 0 25px var(--primary);
+}
+
+.btn-curriculo{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 15px 35px;
+    background: var(--primary);
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 10px;
+    transition: .3s;
+    box-shadow: 0 0 20px rgba(30,224,109,.25);
+}
+
+.btn-curriculo:hover{
+    background: #fff;
+    color: #000;
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px var(--primary);
+}
+/* ============================================================
+   9. ANIMAÇÕES (DATA-ANIME)
    ============================================================ */
 [data-anime] {
   opacity: 0;
