@@ -1,0 +1,9 @@
+:root {
+  --primary: #1ee06d;           /* Verde Neon */
+  --bg-gradient: linear-gradient(to bottom, #050505, #0a110d, #050505);
+  --card-bg: #161616;           /* Fundo dos Cards */
+  --white: #ffffff;
+  --text-gray: #a9a9a9;         /* Texto Secundário */
+  --transition: 0.4s ease-in-out;
+}
+
