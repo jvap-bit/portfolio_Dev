@@ -21,6 +21,9 @@ body {
   overflow-x: hidden;
 }
 
+/* ============================================================
+   HEADER & NAVEGAÇÃO
+   ============================================================ */
 .header-container {
   text-align: center;
   padding: 40px 20px 20px;
@@ -59,6 +62,52 @@ body {
   color: var(--primary);
 }
 
+/* ============================================================
+   ESTILOS DO FILTRO DE CERTIFICADOS
+   ============================================================ */
+.filtro-container {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0 40px;
+}
+
+.filtro-select {
+  background-color: var(--card-bg);
+  color: var(--white);
+  border: 1px solid rgba(30, 224, 109, 0.3);
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  appearance: none; /* Remove seta padrão do navegador */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%231ee06d' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 45px;
+}
+
+.filtro-select:hover,
+.filtro-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 15px rgba(30, 224, 109, 0.3);
+}
+
+.filtro-select option {
+  background-color: #121212;
+  color: var(--white);
+  padding: 10px;
+}
+
+/* ============================================================
+   SEÇÃO & GRID DE CARDS
+   ============================================================ */
 .section-container {
   padding: 20px 20px 60px;
 }   
@@ -78,21 +127,31 @@ body {
   margin: 0 auto;
 }
 
+/* Padronização dos Cards para Filtragem */
 .certificado-card {
   background: var(--card-bg);
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), opacity 0.3s ease, scale 0.3s ease;
   display: flex;
   flex-direction: column;
+  opacity: 1;
+  scale: 1;
 }
 
 .certificado-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 20px rgba(30, 224, 109, 0.2);
   border-color: rgba(30, 224, 109, 0.3);
+}
+
+/* Classe utilitária para esconder cards com animação */
+.certificado-card.escondido {
+  display: none !important;
+  opacity: 0;
+  scale: 0.95;
 }
 
 .card-img img {
@@ -116,10 +175,12 @@ body {
   padding: 10px 15px;
   border-radius: 6px;
   font-weight: 600;
+  margin-top: auto; /* Mantém o botão sempre no rodapé do card */
   transition: var(--transition);
 }
 
 .btn-enviar:hover {
   background: var(--primary);
   color: #050505;
+  box-shadow: 0 0 10px rgba(30, 224, 109, 0.4);
 }

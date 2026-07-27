@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Certificados | João Victor</title>
+    <title>Certificados | João Victor</title>
     <link rel="stylesheet" href="../assets/css/certificados.css">
 </head>
 <body>
@@ -20,14 +20,24 @@
     <main class="section-container">
         <div class="catalog-header" data-anime="up">
             <h1 class="section-title">Certificados</h1>
-            <p style="text-align: center; color: var(--text-gray); margin-top: -30px; margin-bottom: 50px;">
+            <p style="text-align: center; color: var(--text-gray); margin-top: -30px; margin-bottom: 30px;">
                 Uma visão detalhada dos certificados que obtive.
             </p>
+
+            <!-- Filtro centralizado abaixo do título -->
+            <div class="filtro-container">
+                <select class="filtro-select" id="filtroSelect" onchange="filtrarCertificados()">
+                    <option value="todos">Todos os Certificados</option>
+                    <option value="linguagem">Linguagem</option>
+                    <option value="transversais">Transversais</option>
+                    <option value="presenciais">Presenciais</option>
+                </select>
+            </div>
         </div>
 
         <div class="certificados-grid">
 
-            <div class="certificado-card" data-anime="up">
+            <div class="certificado-card" data-categoria="linguagem" data-anime="up">
                 <div class="card-img">
                     <img src="../assets/IMG/certificados/alura.png" alt="Certificado Alura">
                 </div>
@@ -36,11 +46,11 @@
                     <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">
                         Certificado de conclusão do curso de Criação de Jogos.
                     </p>
-                    <a href="../assets/IMG/certificados/alura.png" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: 20px;">Ver Certificado</a>
+                    <a href="../assets/IMG/certificados/alura.png" target="_blank" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: auto;">Ver Certificado</a>
                 </div>
             </div>
 
-            <div class="certificado-card" data-anime="up">
+            <div class="certificado-card" data-categoria="transversais" data-anime="up">
                 <div class="card-img">
                     <img src="../assets/IMG/certificados/cidadania digital.png" alt="Certificado Cidadania Digital">
                 </div>
@@ -49,11 +59,11 @@
                     <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">
                         Certificado de conclusão do curso de Cidadania Digital.
                     </p>
-                    <a href="../assets/IMG/certificados/cidadania digital.png" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: 20px;">Ver Certificado</a>
+                    <a href="../assets/IMG/certificados/cidadania digital.png" target="_blank" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: auto;">Ver Certificado</a>
                 </div>
             </div>
 
-            <div class="certificado-card" data-anime="up">
+            <div class="certificado-card" data-categoria="presenciais" data-anime="up">
                 <div class="card-img">
                     <img src="../assets/IMG/certificados/criacao de jogos digitais.png" alt="Certificado Criação de Jogos Digitais">
                 </div>
@@ -62,11 +72,11 @@
                     <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">
                         Certificado de conclusão do curso de Criação de Jogos Digitais.
                     </p>
-                    <a href="../assets/IMG/certificados/criacao de jogos digitais.png" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: 20px;">Ver Certificado</a>
+                    <a href="../assets/IMG/certificados/criacao de jogos digitais.png" target="_blank" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: auto;">Ver Certificado</a>
                 </div>
             </div>
 
-            <div class="certificado-card" data-anime="up">
+            <div class="certificado-card" data-categoria="transversais" data-anime="up">
                 <div class="card-img">
                     <img src="../assets/IMG/certificados/design thinking.png" alt="Certificado Design Thinking">
                 </div>
@@ -75,11 +85,11 @@
                     <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">
                         Certificado de conclusão do curso de Design Thinking.
                     </p>
-                    <a href="../assets/IMG/certificados/design thinking.png" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: 20px;">Ver Certificado</a>
+                    <a href="../assets/IMG/certificados/design thinking.png" target="_blank" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: auto;">Ver Certificado</a>
                 </div>
             </div>
 
-            <div class="certificado-card" data-anime="up">
+            <div class="certificado-card" data-categoria="transversais" data-anime="up">
                 <div class="card-img">
                     <img src="../assets/IMG/certificados/desvendando a industria 4.0.png" alt="Certificado Desvendando a Indústria 4.0">
                 </div>
@@ -88,11 +98,11 @@
                     <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">
                         Certificado de conclusão do curso de Desvendando a Indústria 4.0.
                     </p>
-                    <a href="../assets/IMG/certificados/desvendando a industria 4.0.png" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: 20px;">Ver Certificado</a>
+                    <a href="../assets/IMG/certificados/desvendando a industria 4.0.png" target="_blank" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: auto;">Ver Certificado</a>
                 </div>
             </div>
 
-            <div class="certificado-card" data-anime="up">
+            <div class="certificado-card" data-categoria="transversais" data-anime="up">
                 <div class="card-img">
                     <img src="../assets/IMG/certificados/desvendando o esg.png" alt="Certificado Desvendando o ESG">
                 </div>
@@ -101,11 +111,11 @@
                     <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">
                         Certificado de conclusão do curso de Desvendando o ESG.
                     </p>
-                    <a href="../assets/IMG/certificados/desvendando o esg.png" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: 20px;">Ver Certificado</a>
+                    <a href="../assets/IMG/certificados/desvendando o esg.png" target="_blank" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: auto;">Ver Certificado</a>
                 </div>
             </div>
 
-            <div class="certificado-card" data-anime="up">
+            <div class="certificado-card" data-categoria="linguagem" data-anime="up">
                 <div class="card-img">
                     <img src="../assets/IMG/certificados/ef set.png" alt="Certificado EF SET">
                 </div>
@@ -114,11 +124,11 @@
                     <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">
                         Certificado de conclusão do curso de inglês da Wizard.
                     </p>
-                    <a href="../assets/IMG/certificados/ef set.png" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: 20px;">Ver Certificado</a>
+                    <a href="../assets/IMG/certificados/ef set.png" target="_blank" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: auto;">Ver Certificado</a>
                 </div>
             </div>
 
-            <div class="certificado-card" data-anime="up">
+            <div class="certificado-card" data-categoria="transversais" data-anime="up">
                 <div class="card-img">
                     <img src="../assets/IMG/certificados/empreender senai.png" alt="Certificado Empreender SENAI">
                 </div>
@@ -127,11 +137,11 @@
                     <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">
                         Certificado de conclusão do curso de Empreender SENAI.
                     </p>
-                    <a href="../assets/IMG/certificados/empreender senai.png" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: 20px;">Ver Certificado</a>
+                    <a href="../assets/IMG/certificados/empreender senai.png" target="_blank" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: auto;">Ver Certificado</a>
                 </div>
             </div>
 
-            <div class="certificado-card" data-anime="up">
+            <div class="certificado-card" data-categoria="transversais" data-anime="up">
                 <div class="card-img">
                     <img src="../assets/IMG/certificados/etica na inteligencia artificial.png" alt="Certificado Ética na Inteligência Artificial">
                 </div>
@@ -140,11 +150,11 @@
                     <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">
                         Certificado de conclusão do curso de Ética na Inteligência Artificial.
                     </p>
-                    <a href="../assets/IMG/certificados/etica na inteligencia artificial.png" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: 20px;">Ver Certificado</a>
+                    <a href="../assets/IMG/certificados/etica na inteligencia artificial.png" target="_blank" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: auto;">Ver Certificado</a>
                 </div>
             </div>
 
-            <div class="certificado-card" data-anime="up">
+            <div class="certificado-card" data-categoria="transversais" data-anime="up">
                 <div class="card-img">
                     <img src="../assets/IMG/certificados/fundamentos da gestão de projetos aplicados na industria.png" alt="Certificado Fundamentos da Gestão de Projetos Aplicados na Indústria">
                 </div>
@@ -153,11 +163,11 @@
                     <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">
                         Certificado de conclusão do curso de Fundamentos da Gestão de Projetos Aplicados na Indústria.
                     </p>
-                    <a href="../assets/IMG/certificados/fundamentos da gestão de projetos aplicados na industria.png" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: 20px;">Ver Certificado</a>
+                    <a href="../assets/IMG/certificados/fundamentos da gestão de projetos aplicados na industria.png" target="_blank" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: auto;">Ver Certificado</a>
                 </div>
             </div>
 
-            <div class="certificado-card" data-anime="up">
+            <div class="certificado-card" data-categoria="transversais" data-anime="up">
                 <div class="card-img">
                     <img src="../assets/IMG/certificados/fundamentos da inteligencia artificial.png" alt="Certificado Fundamentos da Inteligência Artificial">
                 </div>
@@ -166,11 +176,11 @@
                     <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">
                         Certificado de conclusão do curso de Fundamentos da Inteligência Artificial.
                     </p>
-                    <a href="../assets/IMG/certificados/fundamentos da inteligencia artificial.png" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: 20px;">Ver Certificado</a>
+                    <a href="../assets/IMG/certificados/fundamentos da inteligencia artificial.png" target="_blank" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: auto;">Ver Certificado</a>
                 </div>
             </div>
 
-            <div class="certificado-card" data-anime="up">
+            <div class="certificado-card" data-categoria="transversais" data-anime="up">
                 <div class="card-img">
                     <img src="../assets/IMG/certificados/geração de valior circular e modelo de negocios.png" alt="Certificado Geração de Valor Circular e Modelo de Negócios">
                 </div>
@@ -179,11 +189,11 @@
                     <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">
                         Certificado de conclusão do curso de Geração de Valor Circular e Modelo de Negócios.
                     </p>
-                    <a href="../assets/IMG/certificados/geração de valior circular e modelo de negocios.png" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: 20px;">Ver Certificado</a>
+                    <a href="../assets/IMG/certificados/geração de valior circular e modelo de negocios.png" target="_blank" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: auto;">Ver Certificado</a>
                 </div>
             </div>
 
-            <div class="certificado-card" data-anime="up">
+            <div class="certificado-card" data-categoria="transversais" data-anime="up">
                 <div class="card-img">
                     <img src="../assets/IMG/certificados/gestao do tempo.png" alt="Certificado Gestão do Tempo">
                 </div>
@@ -192,24 +202,11 @@
                     <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">
                         Certificado de conclusão do curso de Gestão do Tempo.
                     </p>
-                    <a href="../assets/IMG/certificados/gestao do tempo.png" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: 20px;">Ver Certificado</a>
+                    <a href="../assets/IMG/certificados/gestao do tempo.png" target="_blank" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: auto;">Ver Certificado</a>
                 </div>
             </div>
 
-            <div class="certificado-card" data-anime="up">
-                <div class="card-img">
-                    <img src="../assets/IMG/certificados/fundamentos da gestão de projetos aplicados na industria.png" alt="Certificado Fundamentos da Gestão de Projetos Aplicados na Indústria">
-                </div>
-                <div class="card-body">
-                    <h3 style="color: var(--primary); margin-bottom: 10px;">Fundamentos da Gestão de Projetos Aplicados na Indústria</h3>
-                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">
-                        Certificado de conclusão do curso de Fundamentos da Gestão de Projetos Aplicados na Indústria.
-                    </p>
-                    <a href="../assets/IMG/certificados/fundamentos da gestão de projetos aplicados na industria.png" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: 20px;">Ver Certificado</a>
-                </div>
-            </div>
-
-            <div class="certificado-card" data-anime="up">
+            <div class="certificado-card" data-categoria="transversais" data-anime="up">
                 <div class="card-img">
                     <img src="../assets/IMG/certificados/por dentro da segurançca cibernetica.png" alt="Certificado Por Dentro da Segurança Cibernética">
                 </div>
@@ -218,11 +215,11 @@
                     <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">
                         Certificado de conclusão do curso de Por Dentro da Segurança Cibernética.
                     </p>
-                    <a href="../assets/IMG/certificados/por dentro da segurançca cibernetica.png" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: 20px;">Ver Certificado</a>
+                    <a href="../assets/IMG/certificados/por dentro da segurançca cibernetica.png" target="_blank" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: auto;">Ver Certificado</a>
                 </div>
             </div>
 
-            <div class="certificado-card" data-anime="up">
+            <div class="certificado-card" data-categoria="transversais" data-anime="up">
                 <div class="card-img">
                     <img src="../assets/IMG/certificados/seguranca no trabalho.png" alt="Certificado Segurança no Trabalho">
                 </div>
@@ -231,10 +228,42 @@
                     <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">
                         Certificado de conclusão do curso de Segurança no Trabalho.
                     </p>
-                    <a href="../assets/IMG/certificados/seguranca no trabalho.png" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: 20px;">Ver Certificado</a>
+                    <a href="../assets/IMG/certificados/seguranca no trabalho.png" target="_blank" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: auto;">Ver Certificado</a>
+                </div>
+            </div>
+
+            <div class="certificado-card" data-categoria="presenciais" data-anime="up">
+                <div class="card-img">
+                    <img src="../assets/IMG/certificados/design de jogos digitais.png" alt="Certificado Design de Jogos Digitais">
+                </div>
+                <div class="card-body">
+                    <h3 style="color: var(--primary); margin-bottom: 10px;">Design de Jogos Digitais</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">
+                        Certificado de conclusão do curso de Design de Jogos Digitais.
+                    </p>
+                    <a href="../assets/IMG/certificados/design de jogos digitais.png" target="_blank" class="btn-enviar" style="display: block; text-align: center; text-decoration: none; margin-top: auto;">Ver Certificado</a>
                 </div>
             </div>
 
         </div>
+    </main>
+
+    <!-- Script para executar a filtragem JS -->
+    <script>
+        function filtrarCertificados() {
+            const filtro = document.getElementById('filtroSelect').value.toLowerCase();
+            const cards = document.querySelectorAll('.certificado-card');
+
+            cards.forEach(card => {
+                const categoria = card.getAttribute('data-categoria');
+                
+                if (filtro === 'todos' || categoria === filtro) {
+                    card.classList.remove('escondido');
+                } else {
+                    card.classList.add('escondido');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
